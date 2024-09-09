@@ -3,6 +3,8 @@ import "./globals.css";
 
 // COMPONENTES
 import Header from "@/components/header";
+import PageTransition from "@/components/PageTransition";
+import StairTransition from "@/components/StairTransition";
 
 
 //CONFIGURACIÓN DE FUENTE
@@ -22,7 +24,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={jetbrainsMono.variable}>
       <Header />
-      {children}</body>
+      <StairTransition />
+      <PageTransition>{children}</PageTransition>
+
+      </body>
      
     </html>
   );
