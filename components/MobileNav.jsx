@@ -40,12 +40,12 @@ const MobileNav = () => {
                 <div className='mt-32 mb-48 text-center text-2xl'>
                     <Link href="/">
                         <h1 className='text-4xl font-semibold'>
-                            Felipe<span className='text-accent'>.</span>
+                            Felipe<span className='text-accent'>.</span>Vega
                         </h1>
                     </Link>
                 </div>
                 {/* NAV */}
-                <nav>
+                <nav className='flex flex-col justify-center items-center gap-8'>
                     {links.map((link,index) => {
                         return (
                             <Link 
