@@ -1,7 +1,7 @@
 "use client";
 
-import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs,  } from "react-icons/fa";
-import { SiTailwindcss, SiNextdotjs  } from "react-icons/si";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaFigma, FaNodeJs, FaPython, FaAws,  } from "react-icons/fa";
+import { SiTailwindcss, SiNextdotjs, SiPostgresql, SiMysql } from "react-icons/si";
 
 //Acerca de mi
 const about = {
@@ -70,8 +70,8 @@ const education = {
       duration: '2021 - Presente',
     },
     {
-      institution: 'ETS',
-      degree: 'TOEIC: 800 Puntos', 
+      institution: 'EDUC. TESTING SERVICE',
+      degree: 'TOEIC | 800 Puntos', 
       duration: '2023',
     },
     {
@@ -86,7 +86,7 @@ const education = {
     },
     {
       institution: 'UNIVERSIDAD DE TARAPACÁ',
-      degree: 'Pedagogía en Inglés',
+      degree: 'Pedagogía en Inglés (No Finalizada)',
       duration: '2018 - 2020',
     },
     
@@ -128,6 +128,22 @@ const skills = {
     {
       icon: <FaFigma />,
       name: "Figma",
+    },
+    {
+      icon: <SiPostgresql />,
+      name: "PostgreSQL",
+    },
+    {
+      icon: <FaPython />,
+      name: "Python",
+    },
+    {
+      icon: <FaAws />,
+      name: "Amazon Web Services",
+    },
+    {
+      icon: <SiMysql />,
+      name: "MySQL",
     },
   ]
 }
