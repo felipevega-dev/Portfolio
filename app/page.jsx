@@ -8,11 +8,11 @@ import Foto from "@/components/Foto";
 const Inicio = () => {
   return (
     <section className="h-full">
-      <div className="container mx-auto h-full">Inicio
+      <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between
         xl:pt-8 xl:pb-24">
           {/* TEXTO */}
-          <div className="text-center xl:text-left ">
+          <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Desarrollador de Software</span>
             <h1 className="h1 mb-6">
               Hola, Soy <br /><span className="text-accent"> Felipe Vega</span>
@@ -30,7 +30,7 @@ const Inicio = () => {
                 <span>Descargar CV</span>
                 <FiDownload className="text-xl" />
               </Button>
-              <div className="mb-8 xl:mb-8">
+              <div className="mb-8 xl:mb-0">
                 <Redes 
                 containerStyles="flex gap-6" 
                 iconStyles= "w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
@@ -39,7 +39,7 @@ const Inicio = () => {
             </div>
           </div>
           {/* FOTO */}
-          <div>
+          <div className="order-1 xl:order-none mb-8 xl:mb-0">
             <Foto />
           </div>
         </div> 
