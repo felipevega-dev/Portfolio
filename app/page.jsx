@@ -11,7 +11,7 @@ const Inicio = () => {
     <section className="h-full">
       <div className="container mx-auto h-full">
         <div className="flex flex-col xl:flex-row items-center justify-between
-        xl:pt-6 xl:pb-8">
+        xl:pt-2 xl:pb-8">
           {/* TEXTO */}
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Desarrollador de Software</span>

@@ -4,11 +4,11 @@ import {FaGithub, FaLinkedinIn, FaYoutube} from 'react-icons/fa'
 const redes = [
    {
     icon: <FaGithub />,
-    path: ""
+    path: "https://github.com/felipevega-dev"
     },
     {
     icon: <FaLinkedinIn />,
-    path: ""
+    path: "https://www.linkedin.com/in/felipevega-dev/"
     },
     {
     icon: <FaYoutube />,
@@ -20,13 +20,29 @@ const redes = [
 const Redes = ({containerStyles, iconStyles}) => {
   return (
     <div className={containerStyles}>
-        {redes.map((item, index) =>  {
-            return (
-                <Link key={index} href={item.path} className={iconStyles}>
-                        {item.icon}   
-                </Link>
-            );
-        })}
+      {redes.map((item, index) => {
+        if (item.path.startsWith('http')) {
+          // External link
+          return (
+            <a
+              key={index}
+              href={item.path}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={iconStyles}
+            >
+              {item.icon}
+            </a>
+          )
+        } else {
+          // Internal link
+          return (
+            <Link key={index} href={item.path} className={iconStyles}>
+              {item.icon}
+            </Link>
+          )
+        }
+      })}
     </div>
   )
 }

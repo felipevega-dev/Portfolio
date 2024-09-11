@@ -47,8 +47,8 @@ const experience = {
   description: 'He trabajado en varios proyectos de desarrollo de software, tanto en empresas como de forma independiente. A continuación, se detallan algunos de los proyectos más destacados en los que he participado:',
   items: [
     {
-      company: 'E-commerce Startups',
-      position: 'Freelance',
+      company: 'Freelance',
+      position: 'Desarrollo de Software',
       duration: '2021 - Presente',
     },
     {
@@ -65,7 +65,7 @@ const education = {
   description: 'He estudiado en varias instituciones educativas, obteniendo conocimientos en diversas áreas de la informática y la tecnología. A continuación, se detallan algunos de los cursos y certificaciones más relevantes que he realizado:',
   items: [
     {
-      institution: 'DuocUC',
+      institution: 'DUOC UC',
       degree: 'Ingeniería en Informática',
       duration: '2021 - Presente',
     },
@@ -75,17 +75,17 @@ const education = {
       duration: '2023',
     },
     {
-      institution: 'Coursera',
+      institution: 'COURSERA',
       degree: 'Certificado Analisís de Datos de Google', 
       duration: '2023',
     },
     {
-      institution: 'Talento Digital',
-      degree: 'Prueba Manejo Inglés MC (86%)', 
+      institution: 'TALENTO DIGITAL',
+      degree: 'Prueba Manejo de Inglés MC (86%)', 
       duration: '2022',
     },
     {
-      institution: 'Universidad de Tarapacá',
+      institution: 'UNIVERSIDAD DE TARAPACÁ',
       degree: 'Pedagogía en Inglés',
       duration: '2018 - 2020',
     },
@@ -164,15 +164,93 @@ const Cv = () => {
           <div className="min-h-[70vh] w-full">
                 {/* Experiencia */}
                 <TabsContent value="experience" className="w-full">
-                  Experiencia
+                  <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                    <h3 className="text-4xl font-bold">{experience.title}</h3>
+                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                    {experience.description}
+                    </p>
+                  <ScrollArea className="h-[400px]">
+                      <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                        {experience.items.map((item, index) => {
+                          return(
+                            <li key={index} className="bg-[#232329] h-[182px] py-6
+                            px-10 rounded-xl flex flex-col justify-center items-center 
+                            lg:items-start gap-1 "
+                              >
+                              <span className="text-accent">{item.duration}</span>
+                              <h3 className="text-xl max-w-[260px] min-h-[60px]
+                              text-center lg:text-left">{item.position}</h3>
+                              <div className="flex items-center gap-3">
+                                {/* PUNTO */}
+                                <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                                <p className="text-white/60">{item.company}</p>
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                  </ScrollArea>
+                  </div>
                 </TabsContent>  
                 {/* Educación */}
                 <TabsContent value="education" className="w-full">
-                  Educación
+                  <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                    <h3 className="text-4xl font-bold">{education.title}</h3>
+                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                    {education.description}
+                    </p>
+                  <ScrollArea className="h-[400px]">
+                      <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                        {education.items.map((item, index) => {
+                          return(
+                            <li key={index} className="bg-[#232329] h-[182px] py-6
+                            px-10 rounded-xl flex flex-col justify-center items-center 
+                            lg:items-start gap-1 "
+                              >
+                              <span className="text-accent">{item.duration}</span>
+                              <h3 className="text-xl max-w-[260px] min-h-[60px]
+                              text-center lg:text-left">{item.degree}</h3>
+                              <div className="flex items-center gap-3">
+                                {/* PUNTO */}
+                                <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                                <p className="text-white/60">{item.institution}</p>
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                  </ScrollArea>
+                  </div>
                 </TabsContent> 
                 {/* Habilidades */}
                 <TabsContent value="skills" className="w-full">
-                  Habilidades
+                <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                    <h3 className="text-4xl font-bold">{skills.title}</h3>
+                    <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
+                    {skills.description}
+                    </p>
+                  <ScrollArea className="h-[400px]">
+                      <ul className="grid grid-cols-1 lg:grid-cols-2 gap-[30px]">
+                        {education.items.map((item, index) => {
+                          return(
+                            <li key={index} className="bg-[#232329] h-[182px] py-6
+                            px-10 rounded-xl flex flex-col justify-center items-center 
+                            lg:items-start gap-1 "
+                              >
+                              <span className="text-accent">{item.duration}</span>
+                              <h3 className="text-xl max-w-[260px] min-h-[60px]
+                              text-center lg:text-left">{item.degree}</h3>
+                              <div className="flex items-center gap-3">
+                                {/* PUNTO */}
+                                <span className="w-[6px] h-[6px] rounded-full bg-accent"></span>
+                                <p className="text-white/60">{item.institution}</p>
+                              </div>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                  </ScrollArea>
+                  </div>
                 </TabsContent> 
                 {/* Acerca de mi */}
                 <TabsContent value="about" className="w-full">
