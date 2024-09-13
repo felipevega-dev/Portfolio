@@ -82,11 +82,28 @@ const Contacto = () => {
                       className= "h-[200px]"
                       placeholder= "Escribe tu mensaje aquí."
                     />
+                    {/* btn */}
+                    <Button size="md" className="max-w-40">
+                      Enviame un mensaje
+                    </Button>
                   </form> 
                 </div>
                 { /* INFO */}
                 <div className="flex-1 flex items-center xl:justify-end order-1
-                xl:order-none mb-8 xl:mb-0">Info</div>
+                xl:order-none mb-8 xl:mb-0">
+                    <ul>
+                      {info.map((item, index) => {
+                        return <li key={index}>
+                          <div>
+                            <div>{item.icon}</div>
+                          </div>
+                          <div>
+                            <p>{item.title}</p>
+                          </div>
+                        </li>
+                      })}
+                    </ul>
+                </div>
               </div>  
             </div>
     </motion.section>
