@@ -48,7 +48,7 @@ const projects = [
     num: '04',
     category: 'backend',
     title: 'Flask Swagger API',
-    description: 'Clone de la pagina principal de Spotify',
+    description: 'API de productos utilizando Swagger y Flask',
     stack: [{name: "Flask"}, {name: "Swagger"}, {name: "Python"}, {name: "Transbank"}],
     image: '/assets/work/featuring.png',
     live: '',
