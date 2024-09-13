@@ -63,6 +63,25 @@ const Contacto = () => {
                       <Input type="email" placeholder="Correo Electronico"/>
                       <Input type="phone" placeholder="Telefono"/>
                     </div>
+                    <Select>
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Selecciona un servicio"/>
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          <SelectLabel>Selecciona un servicio</SelectLabel>
+                          <SelectItem value="est">Desarrollo Web</SelectItem>
+                          <SelectItem value="cst">Diseño UI/UX</SelectItem>
+                          <SelectItem value="mst">Desarrollo Movil</SelectItem>
+                          <SelectItem value="bkd">Desarrollo Backend</SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                    {/* text area*/}
+                    <Textarea
+                      className= "h-[200px]"
+                      placeholder= "Escribe tu mensaje aquí."
+                    />
                   </form> 
                 </div>
                 { /* INFO */}
