@@ -29,7 +29,6 @@ export async function POST(request) {
         Mensaje: ${message}
       `, // cuerpo de texto plano
       html: `
-        <h1>Nuevo mensaje de contacto</h1>
         <p><strong>Nombre:</strong> ${firstname} ${lastname}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Teléfono:</strong> ${phone}</p>
