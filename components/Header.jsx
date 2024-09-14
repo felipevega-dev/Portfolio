@@ -16,8 +16,6 @@ const Header = () => {
                 </h1>
             </Link>
 
-
-
             {/* Barra de navegación Escritorio & Botón de contratación */}
             <div className="hidden xl:flex items-center gap-8">
                 <Nav />
