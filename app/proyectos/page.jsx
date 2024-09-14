@@ -34,28 +34,6 @@ const projects = [
     live: 'https://vegadev-spotifyclone.vercel.app/',
     github: 'https://github.com/felipevega-dev/next13-spotifyclone',
   },
-  {
-    num: '03',
-    category: 'frontend',
-    title: 'Mario Bros JS',
-    description: 'Versión de Mario Bros en Javascript',
-    stack: [{name: "HTML5"}, {name: "Javascript"}, {name: "Phaser"}],
-    image: '/assets/work/thumb3.png',
-    live: '',
-    github: 'https://github.com/felipevega-dev/MarioBrosJS',
-  },
-  {
-    num: '04',
-    category: 'backend',
-    title: 'Flask Swagger API',
-    description: 'API de productos utilizando Swagger y Flask',
-    stack: [{name: "Flask"}, {name: "Swagger"}, {name: "Python"}, {name: "Transbank"}],
-    image: '/assets/work/featuring.png',
-    live: '',
-    github: 'https://github.com/felipevega-dev/Flask-Swagger-Api',
-  },
-
-
 ]
 
 const Proyectos = () => {
