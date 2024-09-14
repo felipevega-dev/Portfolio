@@ -48,7 +48,7 @@ const Contacto = () => {
                 <div className="xl:w-[54%] order-2 xl:order-none">
                   <form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
                     <h3 className="text-4xl text-accent">Trabajemos juntos!</h3>
-                    <p className="text-white/60">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima magni iusto minus vero eum, incidunt dignissimos iste mollitia velit, repellendus, ducimus aliquid consectetur qui laboriosam ipsum est animi numquam vel!
+                    <p className="text-white/60">Si tienes un proyecto en mente o necesitas ayuda con tu sitio web, no dudes en contactarme. Estoy disponible para trabajar en proyectos de desarrollo web, diseño UI/UX y desarrollo de aplicaciones móviles.
                     </p>
                   
                   { /* INPUT */}

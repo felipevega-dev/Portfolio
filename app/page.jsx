@@ -1,5 +1,8 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { FiDownload }  from "react-icons/fi";
+import { useState } from "react";
 
 //COMPONENTES
 import Redes from "@/components/Redes";
@@ -7,6 +10,33 @@ import Foto from "@/components/Foto";
 import Stats from "@/components/Stats";
 
 const Inicio = () => {
+
+  const [isDownloading, setIsDownloading] = useState(false)
+
+  const handleDownload = () => {
+    setIsDownloading(true)
+
+  // Ruta al archivo PDF
+  const pdfPath = '../public/assets/resume/CV_FELIPEVEGA.pdf'
+
+  // Obtén el nombre del archivo de la ruta
+  const fileName = pdfPath.split('/').pop()
+
+  // Crea un elemento <a> temporal
+  const link = document.createElement('a')
+  link.href = pdfPath
+  link.download = fileName || 'CV_FELIPEVEGA.pdf' // Usa el nombre del archivo o un nombre por defecto
+  document.body.appendChild(link)
+
+  // Simula un clic en el enlace para iniciar la descarga
+  link.click()
+
+  // Elimina el elemento <a> temporal
+  document.body.removeChild(link)
+
+  setIsDownloading(false)
+  }
+
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">
@@ -27,8 +57,10 @@ const Inicio = () => {
                 variant="outline" 
                 size="lg"
                 className="uppercase flex items-center gap-2"
+                onClick={handleDownload}
+                disabled={isDownloading}
               >
-                <span>Descargar CV</span>
+                <span>{isDownloading ? 'Descargando...' : 'Descargar CV'}</span>
                 <FiDownload className="text-xl" />
               </Button>
               <div className="mb-8 xl:mb-0">
