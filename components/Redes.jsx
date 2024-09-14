@@ -10,10 +10,6 @@ const redes = [
     icon: <FaLinkedinIn />,
     path: "https://www.linkedin.com/in/felipevega-dev/"
     },
-    {
-    icon: <FaYoutube />,
-    path: ""
-    },
 ]
 
 

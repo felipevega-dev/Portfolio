@@ -17,7 +17,7 @@ const Inicio = () => {
     setIsDownloading(true)
 
   // Ruta al archivo PDF
-  const pdfPath = '../public/assets/resume/CV_FELIPEVEGA.pdf'
+  const pdfPath = '/assets/resume/CV_FELIPEVEGA.pdf'
 
   // Obtén el nombre del archivo de la ruta
   const fileName = pdfPath.split('/').pop()
