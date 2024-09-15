@@ -61,7 +61,7 @@ const Contacto = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("https://formspree.io/f/your-form-id", {
+      const response = await fetch("https://formspree.io/f/xzzpqjeq", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const Contacto = () => {
       });
 
       if (response.ok) {
-        setSuccessMessage("Mensaje enviado con éxito. ¡Gracias por contactarnos!");
+        setSuccessMessage("Mensaje enviado con éxito. ¡Gracias por contactarme! te responderé al a brevedad.");
         setFormData({
           firstname: "",
           lastname: "",
