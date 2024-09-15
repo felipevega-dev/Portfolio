@@ -1,7 +1,6 @@
-"use client";
+'use client';
 
 import { useState } from 'react';
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -20,7 +19,7 @@ import { motion } from "framer-motion";
 const info = [
   {
     icon: <FaPhoneAlt />,
-    title: "Telefono",
+    title: "Teléfono",
     description: "(+569) 93023506"
   },
   {
@@ -28,7 +27,7 @@ const info = [
     title: "Email",
     description: "felipevega.dev@gmail.com"
   },
-]
+];
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -40,6 +39,7 @@ const Contacto = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,16 +61,16 @@ const Contacto = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch("https://formspree.io/f/your-form-id", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        alert('Mensaje enviado con éxito');
+        setSuccessMessage("Mensaje enviado con éxito. ¡Gracias por contactarnos!");
         setFormData({
           firstname: "",
           lastname: "",
@@ -80,11 +80,11 @@ const Contacto = () => {
           message: "",
         });
       } else {
-        throw new Error('Error al enviar el mensaje');
+        throw new Error("Error al enviar el formulario");
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.');
+      setSuccessMessage("Hubo un error al enviar el mensaje. Por favor, intenta de nuevo.");
     } finally {
       setIsSubmitting(false);
     }
@@ -107,10 +107,41 @@ const Contacto = () => {
               <p className="text-white/60">Si tienes un proyecto en mente o necesitas ayuda con tu sitio web, no dudes en contactarme. Estoy disponible para trabajar en proyectos de desarrollo web, diseño UI/UX y desarrollo de aplicaciones móviles.</p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input type="text" name="firstname" placeholder="Nombre" value={formData.firstname} onChange={handleChange} />
-                <Input type="text" name="lastname" placeholder="Apellido" value={formData.lastname} onChange={handleChange} />
-                <Input type="email" name="email" placeholder="Correo Electrónico" value={formData.email} onChange={handleChange} />
-                <Input type="tel" name="phone" placeholder="Teléfono" value={formData.phone} onChange={handleChange} />
+                <Input 
+                  type="text" 
+                  name="firstname" 
+                  placeholder="Nombre" 
+                  value={formData.firstname} 
+                  onChange={handleChange}
+                  aria-label="Nombre"
+                  required
+                />
+                <Input 
+                  type="text" 
+                  name="lastname" 
+                  placeholder="Apellido" 
+                  value={formData.lastname} 
+                  onChange={handleChange}
+                  aria-label="Apellido"
+                  required
+                />
+                <Input 
+                  type="email" 
+                  name="email" 
+                  placeholder="Correo Electrónico" 
+                  value={formData.email} 
+                  onChange={handleChange}
+                  aria-label="Correo Electrónico"
+                  required
+                />
+                <Input 
+                  type="tel" 
+                  name="phone" 
+                  placeholder="Teléfono" 
+                  value={formData.phone} 
+                  onChange={handleChange}
+                  aria-label="Teléfono"
+                />
               </div>
               <Select onValueChange={handleServiceChange} value={formData.service}>
                 <SelectTrigger className="w-full">
@@ -132,10 +163,17 @@ const Contacto = () => {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
+                aria-label="Mensaje"
+                required
               />
               <Button type="submit" size="md" className="max-w-40" disabled={isSubmitting}>
                 {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
               </Button>
+              {successMessage && (
+                <p className="text-green-500 mt-4" role="alert">
+                  {successMessage}
+                </p>
+              )}
             </form> 
           </div>
           {/* INFO */}
@@ -143,8 +181,8 @@ const Contacto = () => {
             <ul className="flex flex-col gap-10">
               {info.map((item, index) => (
                 <li key={index} className="flex items-center gap-6">
-                  <div className="w-[52px] h-[52px] xl:w-[72px] xl:-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
-                    <div className="text-[28px]">{item.icon}</div>
+                  <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
+                    <div className="text-[28px]" aria-hidden="true">{item.icon}</div>
                   </div>
                   <div className="flex-1">
                     <p className="text-white/60">{item.title}</p>
