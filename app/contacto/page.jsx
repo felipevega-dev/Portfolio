@@ -70,7 +70,7 @@ const Contacto = () => {
       });
 
       if (response.ok) {
-        setSuccessMessage("Mensaje enviado con éxito. ¡Gracias por contactarme! te responderé al a brevedad.");
+        setSuccessMessage("Mensaje enviado con éxito. ¡Gracias por contactarme!");
         setFormData({
           firstname: "",
           lastname: "",
