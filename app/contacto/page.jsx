@@ -145,12 +145,28 @@ const Contacto = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row gap-[30px]">
-          <div className="xl:w-[54%] order-2 xl:order-none">
-            <form onSubmit={handleSubmit} className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
-              <h3 className="text-3xl text-accent">Trabajemos juntos!</h3>
-              <p className="text-white/60">Si tienes un proyecto en mente o necesitas ayuda con tu sitio web, no dudes en contactarme. Estoy disponible para trabajar en proyectos de desarrollo web, diseño UI/UX y desarrollo de aplicaciones móviles.</p>
+          {/* INFO */}
+          <div className="xl:w-[40%] xl:ml-auto flex items-center justify-center xl:justify-start">
+            <ul className="flex flex-col gap-6">
+              {info.map((item, index) => (
+                <li key={index} className="flex items-center gap-4">
+                  <div className="w-[50px] h-[50px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
+                    <div className="text-[20px]" aria-hidden="true">{item.icon}</div>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-white/60 text-sm">{item.title}</p>
+                    <h3 className="text-lg">{item.description}</h3>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="xl:w-[60%]">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6 p-8 bg-[#27272c] rounded-xl">
+              <h3 className="text-2xl text-accent">Trabajemos juntos!</h3>
+              <p className="text-white/60 text-sm">Si tienes un proyecto en mente o necesitas ayuda con tu sitio web, no dudes en contactarme. Estoy disponible para trabajar en proyectos de desarrollo web, diseño UI/UX y desarrollo de aplicaciones móviles.</p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Input 
                   type="text" 
                   name="firstname" 
@@ -200,7 +216,7 @@ const Contacto = () => {
               </Select>
               {errors.service && <p className="text-red-500 text-sm">{errors.service}</p>}
               <Textarea
-                className={`h-[200px] ${errors.message ? 'border-red-500' : ''}`}
+                className={`h-[150px] ${errors.message ? 'border-red-500' : ''}`}
                 placeholder="Escribe tu mensaje aquí."
                 name="message"
                 value={formData.message}
@@ -218,22 +234,6 @@ const Contacto = () => {
                 </p>
               )}
             </form> 
-          </div>
-          {/* INFO */}
-          <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-            <ul className="flex flex-col gap-10">
-              {info.map((item, index) => (
-                <li key={index} className="flex items-center gap-6">
-                  <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
-                    <div className="text-[28px]" aria-hidden="true">{item.icon}</div>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-white/60">{item.title}</p>
-                    <h3 className="text-xl">{item.description}</h3>
-                  </div>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>  
       </div>
