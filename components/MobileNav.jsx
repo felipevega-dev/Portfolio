@@ -37,31 +37,34 @@ const MobileNav = () => {
             </SheetTrigger>
             <SheetContent className="flex flex-col">
                 {/* LOGO */}
-                <div className='mt-32 mb-48 text-center text-2xl'>
-                    <Link href="/">
-                        <h1 className='text-4xl font-semibold'>
+                <div className='mt-24 mb-20 text-center'>
+                    <Link href="/" passHref>
+                        <h1 className='text-3xl font-semibold'>
                             Felipe<span className='text-accent'>.</span>Vega
                         </h1>
                     </Link>
                 </div>
                 {/* NAV */}
-                <nav className='flex flex-col justify-center items-center gap-8'>
-                    {links.map((link,index) => {
-                        return (
-                            <Link 
-                                href={link.path} 
-                                key={index}
-                                className={`${link.path === pathname && "text-accent border-b-2 border-accent" } 
+                <nav className='flex flex-col justify-start items-center gap-8'>
+                    {links.map((link, index) => (
+                        <Link 
+                            href={link.path} 
+                            key={index}
+                            passHref
+                            legacyBehavior
+                        >
+                            <a 
+                                className={`${link.path === pathname ? "text-accent border-b-2 border-accent" : ""} 
                                 text-xl capitalize hover:text-accent transition-all`}
                             >
                                 {link.name}
-                            </Link>
-                        );
-                    })}
+                            </a>
+                        </Link>
+                    ))}
                 </nav>
             </SheetContent>
         </Sheet>
-  );
+    );
 };
 
 export default MobileNav;
