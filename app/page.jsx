@@ -48,8 +48,7 @@ const Inicio = () => {
             <h1 className="h1 mb-6">
               Hola, Soy <br /><span className="text-accent"> Felipe Vega</span>
             </h1>
-            <p className="max-w-[500px] mb-9 text-white/80">Destaco en la creación de experiencias digitales elegantes 
-            y domino varios lenguajes y tecnologías de programación.
+            <p className="max-w-[500px] mb-9 text-white/80">Especializado en el desarrollo de aplicaciones web y móviles. Combino creatividad y experiencia técnica para crear soluciones digitales elegantes y funcionales, utilizando las últimas tecnologías y mejores prácticas de la industria.
             </p>
             {/* BTN Y REDES */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
