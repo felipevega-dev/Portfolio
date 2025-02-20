@@ -49,12 +49,12 @@ const experience = {
     {
       company: 'Freelance',
       position: 'Desarrollo de Software',
-      duration: '2021 - Presente',
+      duration: '2022 - Presente',
     },
     {
       company: 'Harrys Boutique',
       position: 'Desarrollador Web / Diseñador UI/UX',
-      duration: '2019 - 2020',
+      duration: '2021 - 2022',
     },
   ],
 }
